@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<div layout:fragment="content">
+    <h1>freeboard</h1>
+    <strong>dropdown > freeboard</strong>
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-3">
+                <a class="btn btn-outline-secondary" href="/board/write">Write</a>
+            </div>
+            <div class="col-6">
+            </div>
+            <div class="col-3">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="p-3">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">조회수</th>
+                <th scope="col">등록일</th>
+                <th scope="col">#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="freeboard:${list}">
+                <th scope="row" th:text="${freeboard.id}">1</th>
+                <td><a th:href="@{/board/update(id=${freeboard.id})}" th:text="${freeboard.title}">Mark</a></td>
+                <td th:text="${freeboard.hits}">Otto</td>
+                <td th:text="${freeboard.regdate}">@mdo</td>
+                <td><a th:href="@{/board/delete(id=${freeboard.id})}" class="btn btn-primary" >삭제</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</html>

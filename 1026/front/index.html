@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Person프론트</h1>
+        <div>내용</div>
+        <div id="content">
+        </div>
+        <input id="mybtn" type="button" value="통신시작"/>
+        <div>
+            <div id="print">
+
+            </div>
+            <input id="list" type="button" value="게시판 목록">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     $('#list').click(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/freeboard/list",
+            data: noparams,
+            success: function (datas) {
+                datas.map(function (data) {
+                    console.log(data);
+                    $("#print").append(data.id + data.writer + data.content + data.wdate + "<br>"); 
+                    // $('#content').html(data.firstName + " " + data.lastName + "<br>");
+                })
+            },
+            error: function (result) {
+                alert('실패', result);
+            }
+        });
+    });
+
+    $('#mybtn').click(function(){
+        alert('누름');
+        var params = { 'lastname':'aa' }
+        var noparams = {  }
+        $.ajax(
+            {
+                type: "GET",
+                url: "http://localhost:8080/api/list",
+                data : noparams,
+                success : function(datas){
+                    datas.map(function(data){
+                        console.log(data);
+                        // $('#content').html("");
+                        $('#content').append(data.firstName+" "+data.lastName+"<br>");
+                    } )
+                },
+                error : function(result){
+                    alert('실패',result);
+                }
+            }
+        );
+    });
+</script>
