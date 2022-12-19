@@ -1,0 +1,16 @@
+package com.example.jwttest.repository;
+
+import com.example.jwttest.entity.Board;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface BoardRepository extends JpaRepository<Board,Long> {
+
+    //List<Board> findByTitleLike(String title);
+    List<Board> findByTitleLike(String title);
+
+    List<Board> findAllByOrderByIdDesc();
+}

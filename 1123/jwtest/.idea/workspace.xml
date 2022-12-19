@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="962a2cce-4345-48f3-b9d7-dbd112f3934a" name="Changes" comment="" />
+    <list default="true" id="962a2cce-4345-48f3-b9d7-dbd112f3934a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +78,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/sunghan/Documents/GitHub/School_spring/1123/jwtest",
     "spring.configuration.checksum": "ef01e6f53d12aa26ae01dda9ded41c41"
   }
 }]]></component>
@@ -98,6 +101,7 @@
       <updated>1669169025235</updated>
       <workItem from="1669169026407" duration="11968000" />
       <workItem from="1669450328514" duration="132000" />
+      <workItem from="1669593636240" duration="1145000" />
     </task>
     <servers />
   </component>
